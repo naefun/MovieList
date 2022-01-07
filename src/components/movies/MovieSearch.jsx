@@ -21,6 +21,9 @@ function MovieSearch() {
       setInputText("");
     }
   };
+  const handleClear = () => {
+    dispatch({ type: "CLEAR_TITLES" });
+  };
 
   return (
     <div className="w-full flex justify-center">
@@ -30,14 +33,21 @@ function MovieSearch() {
           placeholder="search"
           value={inputText}
           onChange={handleChange}
-          className="rounded-lg px-5 py-2"
+          className="rounded-lg px-5 py-2 text-black"
         />
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-2">
           <button
             type="submit"
             className="text-neutral-200 rounded-lg bg-orange-700 w-full py-1 hover:drop-shadow-lg"
           >
             Go
+          </button>
+          <button
+            type="button"
+            className="text-neutral-200 rounded-lg bg-gray-700/50 w-full py-1 hover:drop-shadow-lg"
+            onClick={handleClear}
+          >
+            Clear
           </button>
         </div>
       </form>

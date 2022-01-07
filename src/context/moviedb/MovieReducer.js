@@ -16,6 +16,11 @@ const movieReducer = (state, action) => {
         ...state,
         currentPage: action.payload,
       };
+    case "CLEAR_TITLES":
+      return {
+        ...state,
+        titles: [],
+      };
     default:
       return state;
   }
