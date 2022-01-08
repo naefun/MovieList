@@ -27,7 +27,10 @@ function Navbar() {
             <Link className="rounded-lg hover:bg-gray-700/40 px-5 py-2" to="/">
               Home
             </Link>
-            <Link className="rounded-lg hover:bg-gray-700/40 px-5 py-2" to="/">
+            <Link
+              className="rounded-lg hover:bg-gray-700/40 px-5 py-2"
+              to="/about"
+            >
               About
             </Link>
           </div>

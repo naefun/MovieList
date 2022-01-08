@@ -62,18 +62,43 @@ function MoviePage() {
         <BsArrowLeftShort className="text-3xl hover:text-orange-700" />
       </button>
 
-      {totalPages().map((page) =>
-        page >= currentPage && page < currentPage + 7 ? (
-          <p
-            className={`cursor-pointer hover:text-orange-700 ${
-              page === currentPage && "text-orange-700"
-            }`}
-            key={page}
-            onClick={() => handleSpecific(page)}
-          >
-            {page}
-          </p>
-        ) : null
+      {totalPages().map(
+        (page) =>
+          // page >= currentPage && page < currentPage + 7 ? (
+          //   <p
+          //     className={`cursor-pointer hover:text-orange-700 ${
+          //       page === currentPage && "text-orange-700"
+          //     }`}
+          //     key={page}
+          //     onClick={() => handleSpecific(page)}
+          //   >
+          //     {page}
+          //   </p>
+          // ) : null
+
+          currentPage - 3 > 0 ? (
+            page >= currentPage - 3 && page <= currentPage + 3 ? (
+              <p
+                className={`cursor-pointer hover:text-orange-700 ${
+                  page === currentPage && "text-orange-700"
+                }`}
+                key={page}
+                onClick={() => handleSpecific(page)}
+              >
+                {page}
+              </p>
+            ) : null
+          ) : page <= 7 ? (
+            <p
+              className={`cursor-pointer hover:text-orange-700 ${
+                page === currentPage && "text-orange-700"
+              }`}
+              key={page}
+              onClick={() => handleSpecific(page)}
+            >
+              {page}
+            </p>
+          ) : null //return 1 - 7
       )}
       <button onClick={handleNext} className="flex flex-row items-center">
         <BsArrowRightShort className="text-3xl hover:text-orange-700" />

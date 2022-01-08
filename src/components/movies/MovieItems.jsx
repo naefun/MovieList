@@ -4,10 +4,20 @@ import MovieItem from "./MovieItem";
 import MoviePage from "./MoviePage";
 
 function MovieItems() {
-  const { titles } = useContext(MovieContext);
+  const { titles, previousSearch } = useContext(MovieContext);
 
   if (titles.length === 0) {
-    return null;
+    return (
+      <div className="mt-5 flex justify-center items-center h-full">
+        Why not try searching for something?
+      </div>
+    );
+  } else if (titles.Response === "False") {
+    return (
+      <div className="mt-5 flex justify-center items-center h-full">
+        Sorry, we could not find any titles matching "{previousSearch}"
+      </div>
+    );
   }
 
   return titles.Search.length > 0 ? (
@@ -19,11 +29,7 @@ function MovieItems() {
       </div>
       <MoviePage />
     </>
-  ) : (
-    <div className="mt-5 flex justify-center items-center h-full">
-      Why not try searching for something?
-    </div>
-  );
+  ) : null;
 }
 
 export default MovieItems;

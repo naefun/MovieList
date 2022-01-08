@@ -3,6 +3,7 @@ import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import { MovieProvider } from "./context/moviedb/MovieContext";
 import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <main className="container mx-auto px-5 min-h-screen">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </main>
           <Footer />
