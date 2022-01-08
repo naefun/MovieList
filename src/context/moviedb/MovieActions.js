@@ -20,5 +20,5 @@ export const searchTitles = async (title, page) => {
 
   const response = await movieapi.get(`/?${params}`);
 
-  return response.data.Search;
+  return response.data;
 };
