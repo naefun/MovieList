@@ -56,10 +56,6 @@ function MoviePage() {
     return pagesList;
   };
 
-  const activePage = (page) => {
-    return page === currentPage ? "text-orange-700" : "";
-  };
-
   return titles.Search.length > 0 ? (
     <div className="flex flex-row gap-5 w-full justify-center mt-5 text-neutral-200">
       <button onClick={handlePrevious} className="flex flex-row items-center">
