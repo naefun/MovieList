@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
-import MovieContext from "../../context/moviedb/MovieContext";
-import { searchTitles } from "../../context/moviedb/MovieActions";
+import { useContext } from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { searchTitles } from "../../context/moviedb/MovieActions";
+import MovieContext from "../../context/moviedb/MovieContext";
 
 function MoviePage() {
   const { titles, dispatch, currentPage, previousSearch } =

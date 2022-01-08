@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { RiMovie2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 function Navbar() {
   const [navShow, setNavShow] = useState(false);

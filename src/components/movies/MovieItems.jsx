@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import MovieContext from "../../context/moviedb/MovieContext";
-import MoviePage from "./MoviePage";
 import MovieItem from "./MovieItem";
+import MoviePage from "./MoviePage";
 
 function MovieItems() {
   const { titles } = useContext(MovieContext);

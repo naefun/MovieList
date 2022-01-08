@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
-import MovieContext from "../../context/moviedb/MovieContext";
+import { useContext, useState } from "react";
 import { searchTitles } from "../../context/moviedb/MovieActions";
+import MovieContext from "../../context/moviedb/MovieContext";
 
 function MovieSearch() {
   const [inputText, setInputText] = useState("");
