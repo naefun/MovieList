@@ -63,7 +63,7 @@ function MoviePage() {
       </button>
 
       {totalPages().map((page) =>
-        page >= currentPage && page < currentPage + 10 ? (
+        page >= currentPage && page < currentPage + 7 ? (
           <p
             className={`cursor-pointer hover:text-orange-700 ${
               page === currentPage && "text-orange-700"
