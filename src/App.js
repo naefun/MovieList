@@ -4,6 +4,7 @@ import Navbar from "./components/layout/Navbar";
 import { MovieProvider } from "./context/moviedb/MovieContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import ItemDetails from "./pages/ItemDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/itemdetails/:id" element={<ItemDetails />} />
             </Routes>
           </main>
           <Footer />

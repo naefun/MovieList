@@ -9,6 +9,7 @@ export const MovieProvider = ({ children }) => {
     loading: false,
     previousSearch: "",
     currentPage: 1,
+    title: [],
   };
 
   const [state, dispatch] = useReducer(movieReducer, initialState);

@@ -6,6 +6,12 @@ const movieReducer = (state, action) => {
         titles: action.payload,
         loading: false,
       };
+    case "GET_TITLE":
+      return {
+        ...state,
+        title: action.payload,
+        loading: false,
+      };
     case "SET_PREVIOUS_SEARCH":
       return {
         ...state,

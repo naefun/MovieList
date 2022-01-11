@@ -22,3 +22,14 @@ export const searchTitles = async (title, page) => {
 
   return response.data;
 };
+
+export const getTitle = async (id) => {
+  const params = new URLSearchParams({
+    i: id,
+    r: "json",
+  });
+
+  const response = await movieapi.get(`/?${params}`);
+
+  return response.data;
+};

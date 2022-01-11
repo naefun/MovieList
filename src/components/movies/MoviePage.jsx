@@ -47,7 +47,7 @@ function MoviePage() {
     });
   };
 
-  const totalPages = () => {
+  const totalPagesList = () => {
     let pages = Math.ceil(titles.totalResults / 10);
     let pagesList = [];
     for (let index = 1; index <= pages; index++) {
@@ -56,49 +56,44 @@ function MoviePage() {
     return pagesList;
   };
 
+  const pageNum = (page) => {
+    return (
+      <p
+        className={`cursor-pointer hover:text-orange-700 ${
+          page === currentPage && "text-orange-700"
+        }`}
+        key={page}
+        onClick={() => handleSpecific(page)}
+      >
+        {page}
+      </p>
+    );
+  };
+
+  const pagesShown = 7;
+  const pagesShownHalf = Math.floor(pagesShown / 2);
+  const totalPagesNum = totalPagesList()[totalPagesList().length - 1];
+
   return titles.Search.length > 0 ? (
     <div className="flex flex-row gap-5 w-full justify-center mt-5 text-neutral-200">
       <button onClick={handlePrevious} className="flex flex-row items-center">
         <BsArrowLeftShort className="text-3xl hover:text-orange-700" />
       </button>
 
-      {totalPages().map(
-        (page) =>
-          // page >= currentPage && page < currentPage + 7 ? (
-          //   <p
-          //     className={`cursor-pointer hover:text-orange-700 ${
-          //       page === currentPage && "text-orange-700"
-          //     }`}
-          //     key={page}
-          //     onClick={() => handleSpecific(page)}
-          //   >
-          //     {page}
-          //   </p>
-          // ) : null
-
-          currentPage - 3 > 0 ? (
-            page >= currentPage - 3 && page <= currentPage + 3 ? (
-              <p
-                className={`cursor-pointer hover:text-orange-700 ${
-                  page === currentPage && "text-orange-700"
-                }`}
-                key={page}
-                onClick={() => handleSpecific(page)}
-              >
-                {page}
-              </p>
-            ) : null
-          ) : page <= 7 ? (
-            <p
-              className={`cursor-pointer hover:text-orange-700 ${
-                page === currentPage && "text-orange-700"
-              }`}
-              key={page}
-              onClick={() => handleSpecific(page)}
-            >
-              {page}
-            </p>
-          ) : null //return 1 - 7
+      {totalPagesList().map((page) =>
+        currentPage - pagesShownHalf > 0 &&
+        totalPagesList().length > pagesShown &&
+        currentPage + pagesShownHalf <= totalPagesNum
+          ? page >= currentPage - pagesShownHalf &&
+            page <= currentPage + pagesShownHalf
+            ? pageNum(page)
+            : null
+          : currentPage <= pagesShown && page <= pagesShown
+          ? pageNum(page)
+          : currentPage + pagesShownHalf >= totalPagesNum &&
+            page >= totalPagesNum - (pagesShown - 1)
+          ? pageNum(page)
+          : null
       )}
       <button onClick={handleNext} className="flex flex-row items-center">
         <BsArrowRightShort className="text-3xl hover:text-orange-700" />
