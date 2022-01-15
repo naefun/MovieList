@@ -10,6 +10,13 @@ export const MovieProvider = ({ children }) => {
     previousSearch: "",
     currentPage: 1,
     title: [],
+    titlesToCompare: [
+      ["", ""],
+      ["", ""],
+    ],
+    compareInfo: [],
+    movie1: [],
+    movie2: [],
   };
 
   const [state, dispatch] = useReducer(movieReducer, initialState);
