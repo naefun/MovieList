@@ -14,7 +14,7 @@ function ComparisonCard({ title, value1, value2 }) {
 
   return (
     <div
-      className={`rounded-lg p-2 shadow-lg flex-col justify-center items-center bg-gradient-to-br from-black/0 to-blue-500/10 box-border cursor-pointer hover:text-black`}
+      className={`rounded-lg p-2 shadow-lg flex-col justify-center items-center bg-gradient-to-br from-black/0 to-blue-500/10 box-border cursor-pointer`}
       onClick={() => setHidden(!hidden)}
     >
       <p className="">
