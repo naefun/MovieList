@@ -33,3 +33,21 @@ export const getTitle = async (id) => {
 
   return response.data;
 };
+
+export const getComparedTitles = async (id1, id2) => {
+  const params1 = new URLSearchParams({
+    i: id1,
+    r: "json",
+  });
+  const params2 = new URLSearchParams({
+    i: id2,
+    r: "json",
+  });
+
+  const [info1, info2] = await Promise.all([
+    movieapi.get(`/?${params1}`),
+    movieapi.get(`/?${params2}`),
+  ]);
+
+  return { movie1: info1.data, movie2: info2.data };
+};

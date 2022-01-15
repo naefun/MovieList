@@ -2,9 +2,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import { MovieProvider } from "./context/moviedb/MovieContext";
-import Home from "./pages/Home";
 import About from "./pages/About";
+import Home from "./pages/Home";
 import ItemDetails from "./pages/ItemDetails";
+import CompareItems from "./pages/CompareItems";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/itemdetails/:id" element={<ItemDetails />} />
+              <Route path="/compareitems" element={<CompareItems />} />
             </Routes>
           </main>
           <Footer />

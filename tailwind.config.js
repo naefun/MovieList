@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        permanentMarker: ["Permanent Marker", "cursive"],
       },
       backgroundImage: {
         "movie-pattern": "url('/src/components/assets/pattern.png')",

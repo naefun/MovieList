@@ -27,6 +27,23 @@ const movieReducer = (state, action) => {
         ...state,
         titles: [],
       };
+    case "SET_COMPARE_IDS":
+      return {
+        ...state,
+        titlesToCompare: action.payload,
+      };
+    case "GET_COMPARED_TITLES":
+      return {
+        ...state,
+        movie1: action.payload.movie1,
+        movie2: action.payload.movie2,
+        loading: false,
+      };
+    case "SET_LOADING":
+      return {
+        ...state,
+        loading: true,
+      };
     default:
       return state;
   }
