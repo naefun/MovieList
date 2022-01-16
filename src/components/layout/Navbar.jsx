@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { RiMovie2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import LoginButton from "../auth/LoginButton";
+import LogoutButton from "../auth/LogoutButton";
+import UserInfo from "../auth/UserInfo";
 
 function Navbar() {
   const [navShow, setNavShow] = useState(false);
@@ -22,6 +25,7 @@ function Navbar() {
             MovieList
           </Link>
         </div>
+        <UserInfo />
         <div className="flex-none hidden px-2 mx-2 lg:flex">
           <div className="flex items-stretch gap-5">
             <Link className="rounded-lg hover:bg-gray-700/40 px-5 py-2" to="/">
@@ -33,6 +37,7 @@ function Navbar() {
             >
               About
             </Link>
+            <LoginButton />
           </div>
         </div>
         <div className="flex-none lg:hidden">
@@ -63,6 +68,8 @@ function Navbar() {
         <Link className="rounded-lg hover:bg-gray-700/40 px-5 py-2" to="/about">
           About
         </Link>
+        <LoginButton />
+        <LogoutButton />
       </div>
     </div>
   );

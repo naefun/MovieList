@@ -57,9 +57,7 @@ function MovieItem({ item }) {
           break;
         }
       }
-      let added = !isAdded
-        ? window.alert("Please remove a title from compare")
-        : null;
+      !isAdded && window.alert("Please remove a title from compare");
     }
 
     dispatch({ type: "SET_COMPARE_IDS", payload: compareList });

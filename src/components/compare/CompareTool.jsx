@@ -18,7 +18,7 @@ function CompareTool() {
   const checkThereAreBothTitles = () => {
     let bothTitlesExist = true;
     for (let index = 0; index < titlesToCompare.length; index++) {
-      if (titlesToCompare[index][0] == "") {
+      if (titlesToCompare[index][0] === "") {
         bothTitlesExist = false;
       }
     }

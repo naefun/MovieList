@@ -41,7 +41,7 @@ function ItemDetails() {
         <figure>
           <img
             className=""
-            src={title.Poster == "N/A" ? noImage : title.Poster}
+            src={title.Poster === "N/A" ? noImage : title.Poster}
             alt="item poster"
           />
         </figure>
